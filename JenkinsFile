@@ -1,12 +1,16 @@
 pipeline {
-agent any // Use any available agent tools {
+agent any
+// Use any available agent
+tools {
 maven 'Maven' // Ensure this matches the name configured in Jenkins
 
 }
 
 stages {
 
-stage('Checkout') { steps {
+stage('Checkout') 
+{ steps 
+{
 git branch: 'main', url: 'https://github.com/sahasra1bi23cs102/guava.git'
 
 }
@@ -27,7 +31,9 @@ sh 'mvn test' // Run unit tests
 
 }
 
-stage('Run Application') { steps {
+stage('Run Application')
+{ steps 
+{
 // Start the JAR application
 
 sh 'java -jar target/mavenguava-1.0-SNAPSHOT.jar'
